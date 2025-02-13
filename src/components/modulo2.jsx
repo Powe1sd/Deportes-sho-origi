@@ -4,7 +4,7 @@ const Modulo2 = () => {
   const productos = [
     {
       nombre: "Zapatillas de Running Nike Air Zoom",
-      imagen: "https://example.com/nike-air-zoom.jpg",
+      imagen: "/images/chaqueta.jpeg",
       precio: 120.0,
     },
     {
