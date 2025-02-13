@@ -3,141 +3,161 @@ import React, { useState } from "react";
 const productos = [
   {
     nombre: "Zapatillas de Running Nike Air Zoom",
-    imagen: "/images/chaqueta.jpeg",
+    imagen: "/images/nike.jpeg",
     precio: 250000,
   },
   {
     nombre: "Chaqueta Deportiva Adidas",
-    imagen: "/images/adidas-jacket.jpg",
+    imagen: "/images/chaqueta.jpeg",
     precio: 180000,
   },
   {
     nombre: "Mochila Deportiva Under Armour",
-    imagen: "/images/under-armour-backpack.jpg",
+    imagen: "/images/mochila.jpeg",
     precio: 120000,
   },
   {
     nombre: "Pelota de Fútbol Adidas",
-    imagen: "/images/adidas-soccer-ball.jpg",
+    imagen: "/images/pelota-futbol.png",
     precio: 70000,
   },
-  { nombre: "Gorra Nike", imagen: "/images/nike-cap.jpg", precio: 40000 },
   {
     nombre: "Guantes de Portero Puma",
-    imagen: "/images/puma-gloves.jpg",
+    imagen: "/images/guantes.jpeg",
     precio: 90000,
   },
   {
     nombre: "Shorts de Deporte Reebok",
-    imagen: "/images/reebok-shorts.jpg",
+    imagen: "/images/shorts-deportes.jpeg",
     precio: 80000,
   },
-  {
-    nombre: "Zapatillas de Gimnasio Asics",
-    imagen: "/images/asics-gym-shoes.jpg",
-    precio: 220000,
-  },
+
   {
     nombre: "Ropa de Ciclismo",
-    imagen: "/images/cycling-clothes.jpg",
+    imagen: "/images/ropa-ciclismo.jpeg",
     precio: 150000,
   },
   {
     nombre: "Gafas de Sol Oakley",
-    imagen: "/images/oakley-sunglasses.jpg",
+    imagen: "/images/gafas-sol.jpeg",
     precio: 300000,
   },
   {
     nombre: "Reloj Deportivo Casio",
-    imagen: "/images/casio-sports-watch.jpg",
+    imagen: "/images/reloj-deportivo.jpeg",
     precio: 100000,
   },
   {
     nombre: "Bandana Deportiva",
-    imagen: "/images/sports-bandana.jpg",
+    imagen: "/images/banda-deportiva.jpeg",
     precio: 20000,
   },
   {
     nombre: "Chaleco de Entrenamiento",
-    imagen: "/images/training-vest.jpg",
+    imagen: "/images/chaleco-entrenamiento.jpeg",
     precio: 50000,
   },
   {
     nombre: "Sudadera con Capucha",
-    imagen: "/images/hoodie.jpg",
+    imagen: "/images/sudadera.jpeg",
     precio: 120000,
   },
   {
     nombre: "Zapatillas de Tenis",
-    imagen: "/images/tennis-shoes.jpg",
+    imagen: "/images/zapatillas-deporte.jpeg",
     precio: 200000,
   },
-  { nombre: "Bolsa de Gimnasio", imagen: "/images/gym-bag.jpg", precio: 80000 },
-  {
-    nombre: "Tanga de Deporte",
-    imagen: "/images/sports-tights.jpg",
-    precio: 90000,
-  },
+
   {
     nombre: "Pelota de Baloncesto",
-    imagen: "/images/basketball.jpg",
+    imagen: "/images/pelota-baloncesto.jpeg",
     precio: 60000,
   },
   {
     nombre: "Guantes de Boxeo",
-    imagen: "/images/boxing-gloves.jpg",
+    imagen: "/images/guantes-boxeo.jpeg",
     precio: 100000,
   },
-  { nombre: "Set de Yoga", imagen: "/images/yoga-set.jpg", precio: 120000 },
+
   {
     nombre: "Ropa de Natación",
-    imagen: "/images/swimwear.jpg",
+    imagen: "/images/ropa-natacion.jpeg",
     precio: 150000,
   },
   {
     nombre: "Zapatillas de Running New Balance",
-    imagen: "/images/new-balance.jpg",
+    imagen: "/images/zapatillas-tenis.jpeg",
     precio: 200000,
   },
 ];
 
 const Modulo2 = () => {
-  const [imagenGrande, setImagenGrande] = useState(null); // Estado para la imagen grande
+  const [imagenGrande, setImagenGrande] = useState(null);
 
   const abrirImagenGrande = (imagen) => {
-    setImagenGrande(imagen); // Establecer la imagen grande
+    setImagenGrande(imagen);
   };
 
   const cerrarImagenGrande = () => {
-    setImagenGrande(null); // Cerrar la imagen grande
+    setImagenGrande(null);
   };
 
   return (
-    <div className="tarjetas-productos">
-      {productos.map((producto, index) => (
-        <div className="tarjeta-producto" key={index}>
-          <img
-            src={producto.imagen}
-            alt={producto.nombre}
-            className="imagen-producto"
-            onClick={() => abrirImagenGrande(producto.imagen)} // Abrir imagen en grande
-          />
-          <h3 className="titulo-producto">{producto.nombre}</h3>
-          <p className="precio-producto">
-            ${producto.precio.toLocaleString("es-CO")} COP
-          </p>
-          <button className="boton-comprar">Agregar al Carrito</button>
-        </div>
-      ))}
+    <div className="container mt-5">
+      <div className="row">
+        {productos.map((producto, index) => (
+          <div className="col-md-4 mb-4" key={index}>
+            <div className="card">
+              <img
+                src={producto.imagen}
+                alt={producto.nombre}
+                className="card-img-top"
+                onClick={() => abrirImagenGrande(producto.imagen)}
+                style={{ cursor: "pointer" }}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{producto.nombre}</h5>
+                <p className="card-text">
+                  ${producto.precio.toLocaleString("es-CO")} COP
+                </p>
+                <button className="btn btn-primary">Agregar al Carrito</button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
       {/* Modal para la imagen grande */}
       {imagenGrande && (
-        <div className="modal" onClick={cerrarImagenGrande}>
-          <img
-            src={imagenGrande}
-            alt="Imagen Grande"
-            className="imagen-grande"
-          />
+        <div
+          className="modal show"
+          tabIndex="-1"
+          role="dialog"
+          style={{ display: "block" }}
+        >
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Imagen en Grande</h5>
+                <button
+                  type="button"
+                  className="close"
+                  onClick={cerrarImagenGrande}
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <img
+                  src={imagenGrande}
+                  alt="Imagen Grande"
+                  className="img-fluid"
+                  style={{ maxWidth: "100%", height: "auto" }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
