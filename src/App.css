@@ -1,0 +1,172 @@
+body {
+  overflow-x: hidden;
+}
+
+/* Nav.jsx */
+/* Estilos para la navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 92vh;
+    top: 8vh;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .nav-links li a {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* odulo 2 tarjetas */
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Modulo 2 tarjetas */
+
+/* Modulo 2 tarjetas */
+
+.tarjetas-productos {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  gap: 20px; /* Espacio entre tarjetas */
+  padding: 20px;
+}
+
+.tarjeta-producto {
+  width: calc(
+    23.233% - 20px
+  ); /* Cada tarjeta ocupa el 33.33% del ancho menos el espacio del gap */
+  margin: 10px 0; /* Margen vertical */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease; /* Efecto de hover */
+}
+
+.tarjeta-producto:hover {
+  transform: scale(1.02); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.imagen-producto {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.titulo-producto {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.precio-producto {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.boton-comprar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.boton-comprar:hover {
+  background-color: #218838;
+}
+
+/* Estilos responsivos para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+  .tarjeta-producto {
+    width: calc(50% - 20px); /* En tabletas, 2 columnas */
+  }
+}
+
+@media (max-width: 480px) {
+  .tarjeta-producto {
+    width: 100%; /* En móviles, 1 columna */
+  }
+}
