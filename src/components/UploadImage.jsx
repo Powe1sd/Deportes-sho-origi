@@ -43,7 +43,7 @@ const UploadImage = () => {
 
   return (
     <div>
-      <h3>Subir Imagen</h3>
+      <h3>Subir Imagen 1</h3>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Subir</button>
       {uploadStatus && (

@@ -89,6 +89,20 @@ const productos = [
     imagen: "/images/zapatillas-tenis.jpeg",
     precio: 200000,
   },
+
+  {
+    nombre: "Pelota de Fútbol Adidas",
+    imagen: "/images/pelota-futbol.png",
+    precio: 70000,
+  },
+  {
+    nombre: "Sudadera con Capucha",
+    imagen: "/images/sudadera.jpeg",
+    precio: 120000,
+  },
+ 
+
+
 ];
 
 const Modulo2 = () => {
